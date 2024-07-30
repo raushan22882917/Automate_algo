@@ -6,7 +6,7 @@ def scrape_insider_trades(ticker):
     url = f"https://www.marketbeat.com/stocks/LON/{ticker}/insider-trades/"
 
     response = requests.get(url)
-    response.raise_for_status()  # Check if the request was successful
+    response.raise_for_status() 
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -19,7 +19,7 @@ def scrape_insider_trades(ticker):
     headers = [header.text.strip() for header in table.find_all('th')]
 
     rows = []
-    for row in table.find_all('tr')[1:]:  # Skip the header row
+    for row in table.find_all('tr')[1:]: 
         cols = [col.text.strip() for col in row.find_all('td')]
         rows.append(cols)
 
