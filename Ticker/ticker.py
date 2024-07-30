@@ -30,6 +30,5 @@ def scrape_insider_trades(ticker):
 
     print(f"Data has been scraped and saved to '{filename}'")
 
-# Example usage
 ticker = input("Enter the ticker symbol: ")
 scrape_insider_trades(ticker)
